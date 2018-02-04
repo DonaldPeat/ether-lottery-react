@@ -1,7 +1,8 @@
 import web3 from './web3';
 
 //contract address
-const address = '0x93694a94834D4a6dDf13Dc405eF30678924A3F72';
+const address = '0xfd3f1b679c3b2d7dd3b3199a5cf4d67268fabd19';
+
 //contract interface
 const abi = [
   {
@@ -27,6 +28,15 @@ const abi = [
     inputs: [],
     name: 'getPlayers',
     outputs: [{ name: '', type: 'address[]' }],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: 'winner',
+    outputs: [{ name: '', type: 'address' }],
     payable: false,
     stateMutability: 'view',
     type: 'function'
