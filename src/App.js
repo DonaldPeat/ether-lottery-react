@@ -39,8 +39,10 @@ class App extends Component {
       from: accounts[0],
       value: web3.utils.toWei(this.state.value, 'ether')
     });
+    const players = await lottery.methods.getPlayers().call();
+    const balance = await web3.eth.getBalance(lottery.options.address);
 
-    this.setState({ message: 'You have been entered!' });
+    this.setState({ message: 'You have been entered!', players, balance });
   };
 
   onClick = async e => {
